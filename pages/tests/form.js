@@ -3,12 +3,17 @@ import Head from "next/head";
 import utilStyles from '../../styles/utils.module.css'
 import { useForm } from "react-hook-form";
 import Alert from 'react-bootstrap/Alert'
+import useSWR from 'swr'
+import Axios from "axios";
 
 export default function Form() {
     const { register, handleSubmit, errors, watch } = useForm({ mode: 'onBlur' });
     const watchAllFields = watch();
     const onSubmit = formData => {
-        alert(JSON.stringify(formData))
+        alert(JSON.stringify(formData));
+        Axios.get('/api/form').then(res => {
+            alert('Resultado: ' + res.data.text);
+        });
     }
 
     return (
