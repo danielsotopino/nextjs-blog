@@ -37,7 +37,17 @@ export default function Home({ allPostsData }) {
             ))}
           </ul>
         </section>
-        
+      </section>
+      <section>
+        <h2 className={utilStyles.headingLg}>Tests</h2>
+        <ul className={utilStyles.list}>
+          <li className={utilStyles.listItem}>
+            <Link href="/tests/form">
+              <a>Form example</a>
+            </Link>
+          </li>
+        </ul>
+
       </section>
     </Layout>
   )
