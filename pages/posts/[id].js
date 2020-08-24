@@ -24,7 +24,6 @@ export default function Post({ postData }) {
   )
 }
 
-
 export async function getStaticPaths() {
   // Return a list of possible value for id
   const paths = getAllPostIds()
